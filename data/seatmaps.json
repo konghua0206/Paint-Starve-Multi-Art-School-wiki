@@ -1,0 +1,12 @@
+[
+  {
+    "grade": 1,
+    "class": "A",
+    "image": "data/seatmaps/1A.png"
+  },
+  {
+    "grade": 2,
+    "class": "A",
+    "image": "data/seatmaps/2A.png"
+  }
+]
