@@ -58,34 +58,45 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 加點微陰影增加立體感 */
 }
 
-/* ===== 角色頁 ===== */
+/* ===== 角色頁（手機滿寬、PC 佔 1/3 修正版） ===== */
 .profile {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
-}
-
-@media (min-width: 768px) {
-  .profile {
-    flex-direction: row;
-  }
+  padding: 0; /* 💡 手機版：將外層內距設為 0，讓圖片能 100% 貼齊手機左右螢幕邊緣 */
 }
 
 .profile img {
-  /* 1. 寬度自適應：在小螢幕（如手機）時，圖片最寬可以佔滿整個畫面的 100% */
-  width: 100%;          
-  
-  /* 2. 寬度上限：在大螢幕（如電腦）時，圖片最大就只放到 280px 寬，避免圖片變得太大太突兀 */
-  max-width: 280px;     
-  
-  /* 3. 鎖定比例：不論解析度是 827x1181 還是 1654x2362，框框比例永遠固定 */
-  aspect-ratio: 827 / 1181; 
-  
-  /* 4. 影像填充：等比例縮放填滿框框，不變形 */
+  width: 100%;               /* 💡 手機版：寬度 100% 自動拉滿對齊螢幕 */
+  max-width: 100%;           /* 💡 核心修正：解除原本限死 280px 的設定 */
+  aspect-ratio: 827 / 1181;  /* 維持你完美的直式大頭貼比例 */
   object-fit: cover;    
-  
-  border-radius: 8px;   
+  border-radius: 0;          /* 手機版貼邊時，不設圓角看起來更大氣 */
+}
+
+.profile .info {
+  padding: 0 20px 20px 20px; /* 💡 手機版：把內距單獨補在文字區，這樣文字才不會黏著螢幕邊緣 */
+}
+
+/* 🖥️ 當螢幕寬度大於 768px（進入電腦/平版版面） */
+@media (min-width: 768px) {
+  .profile {
+    flex-direction: row;     /* 改為左右橫向排列 */
+    padding: 40px;           /* 電腦版：恢復四周舒適的大範圍留白 */
+    gap: 40px;               /* 圖片與右側文字的間距拉開，看起來更精緻 */
+    align-items: flex-start; /* 防止圖片高度被文字拉伸變形 */
+  }
+
+  .profile img {
+    width: 35%;              /* 💡 核心修正：讓圖片精準佔據視窗約 1/3 的寬度 */
+    max-width: 450px;        /* 💡 安全保險：設定上限寬度，避免在 4K 巨型螢幕上圖片放大到失控 */
+    border-radius: 12px;     /* 電腦版加上漂亮的圓角邊框 */
+  }
+
+  .profile .info {
+    padding: 0;              /* 電腦版：文字不需要單獨的手機版內距了 */
+    flex: 1;                 /* 讓文字自動填滿剩下 2/3 的右側空間 */
+  }
 }
 
 /* ===== 班級頁 ===== */
