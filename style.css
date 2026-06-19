@@ -2,28 +2,43 @@ body {
   margin: 0;
   font-family: sans-serif;
   background: #f4f4f4;
+  
+  /* 💡 新增：調大基底字型與行距，整個網站的文字都會一起變大舒適 */
+  font-size: 18px; 
+  line-height: 1.6; 
 }
 
 .topbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
+  gap: 12px;
+  padding: 14px 20px; /* 💡 稍微加寬導覽列的上下內距 */
   background: #222;
   color: white;
+  align-items: center; /* 讓元件垂直置中 */
 }
 
 .topbar button {
   background: #444;
   color: white;
   border: none;
-  padding: 6px 10px;
+  
+  /* 💡 修改：加大按鈕的上下與左右內距，並調大字體 */
+  padding: 8px 16px; 
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px; /* 加點圓角更好看 */
   cursor: pointer;
 }
 
 .topbar input {
   margin-left: auto;
-  padding: 5px;
+  
+  /* 💡 修改：加大搜尋框的輸入範圍與字體 */
+  padding: 8px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 .list {
@@ -32,10 +47,15 @@ body {
 
 .card {
   background: white;
-  padding: 10px;
-  margin: 10px 0;
+  
+  /* 💡 修改：加大卡片的內距與字體，增加點擊的舒適度 */
+  padding: 18px 24px; 
+  margin: 14px 0;
+  font-size: 19px; 
+  
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 加點微陰影增加立體感 */
 }
 
 /* ===== 角色頁 ===== */

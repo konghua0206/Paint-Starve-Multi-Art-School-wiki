@@ -239,7 +239,7 @@ async function openTeacher(id) {
         <h2>${data.name}</h2>
         <p style="color: #666; font-weight: bold;">💼 職位：${data.group}</p>
         <p style="white-space: pre-wrap;">${introText}</p>
-        <small>${(data.tags || []).join(" / ") || "暫無備註"}</small>
+        <small>${(data.tags || []).join(" / ") || "　"}</small>
       </div>
     </div>
   `;
