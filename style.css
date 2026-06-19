@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f4f4f4;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background: #222;
+  color: white;
+}
+
+.topbar button {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.topbar input {
+  margin-left: auto;
+  padding: 5px;
+}
+
+.list {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===== 角色頁 ===== */
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .profile {
+    flex-direction: row;
+  }
+}
+
+.profile img {
+  /* 1. 寬度自適應：在小螢幕（如手機）時，圖片最寬可以佔滿整個畫面的 100% */
+  width: 100%;          
+  
+  /* 2. 寬度上限：在大螢幕（如電腦）時，圖片最大就只放到 280px 寬，避免圖片變得太大太突兀 */
+  max-width: 280px;     
+  
+  /* 3. 鎖定比例：不論解析度是 827x1181 還是 1654x2362，框框比例永遠固定 */
+  aspect-ratio: 827 / 1181; 
+  
+  /* 4. 影像填充：等比例縮放填滿框框，不變形 */
+  object-fit: cover;    
+  
+  border-radius: 8px;   
+}
+
+/* ===== 班級頁 ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.classBox {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ===== 座位表 ===== */
+.seatmap {
+  padding: 20px;
+}
+
+.seatmap select {
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.seatmap img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+/* ===== 首頁新樣式 ===== */
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.school-logo {
+  max-width: 200px; /* 控制校徽寬度，可隨喜好放大縮小 */
+  height: auto;     /* 保持等比例，不變形 */
+}
+
+.rules-wrapper {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.rules-wrapper h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #222;
+  padding-bottom: 10px;
+  color: #222;
+}
+
+.rules-list {
+  padding-left: 20px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.rules-list li {
+  margin-bottom: 12px;
+}
+
+/* 強調事項（主辦權利、角色移除等） */
+.rules-list .highlight {
+  font-weight: bold;
+  color: #333;
+}
+
+/* 警告事項（紅色名字、禁止AI等） */
+.rules-list .alert {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+/* 超連結樣式 */
+.rules-list a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.rules-list a:hover {
+  text-decoration: underline;
+}
+
+.rules-list .box-link {
+  font-weight: bold;
+  background: #f0f7ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}

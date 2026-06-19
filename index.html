@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>繪俄史wiki</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 側邊/上方選單 -->
+  <div class="topbar">
+    <div class="logo">繪俄史wiki</div>
+
+    <div class="menu">
+      <button onclick="goHome()">首頁</button>
+      <button onclick="loadClasses()">班級</button>
+      <!-- button onclick="loadStudents()">學生</button-->
+      <button onclick="loadTeachers()">教師</button>
+      <!-- button onclick="loadSeatmaps()">座位表</button-->
+    </div>
+
+    <input id="searchBox" placeholder="搜尋角色..." oninput="search()">
+  </div>
+
+  <!-- 主畫面 -->
+  <div id="app"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
